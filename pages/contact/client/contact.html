@@ -1,0 +1,32 @@
+<template name="contact">
+
+  <div class="jumbotron">
+    <h1>Contact us</h1>
+  </div>
+  <div class = "well" style="background-color: #FFFFFF;">
+    <form>
+      Name:
+      <input type="text" name="name"><br>
+    </form>
+    <br>
+    <form>
+      Date:
+      <input type = "date" name = "date">
+    </form>
+    <br>
+      <label class="radio-inline"><input type="radio" name="optradio">Question</label>
+      <label class="radio-inline"><input type="radio" name="optradio">Comment</label>
+      <label class="radio-inline"><input type="radio" name="optradio">Other</label>
+    <br>
+    <br>
+    <form action="/action_page.php">
+      Select your text color:
+      <input type="color" name="favcolor" value="#ff0000">
+      <input type="submit">
+    </form>
+    <br>
+    <textarea rows="5" cols="50">
+
+    </textarea>
+</div>
+</template>

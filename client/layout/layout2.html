@@ -1,0 +1,12 @@
+<template name = "layout2">
+  <div class = "container">
+    <h1> Steven's cool app</h1>
+    <!-- add a url list of links to about and contact -->
+    <ul>
+      <li><a href = "{{pathFor 'about'}}">About</a></li>
+        <li><a href = "{{pathFor 'contact'}}">Contact</a></li>
+        <li><a href = "{{pathFor 'chat'}}">Chat</a></li>
+    </ul>
+    {{>yield}}
+  </div>
+</template>

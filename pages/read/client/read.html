@@ -1,0 +1,47 @@
+<template name="read">
+
+  <div class="jumbotron">
+      <h1>Read</h1>
+  </div>
+  <div class = "col-md-5" style="background-color: #FFFFFF;">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Genre
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Adventure</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Comedy</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Romance</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Add New Genre</a></li>
+      </ul>
+    </div>
+    <ul style = "list-style-type:square">
+      {{#each t in readArray}}
+        <li><h2>{{t.name}}</h2>
+          <div class="checkbox">
+            <label><input type="checkbox"> Bookmark</label>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class = "container col-md-6 col-md-offset-1" style="background-color: #FFFFFF;">
+    <h2><u>Your Reading List</u></h2>
+    <hr>
+    {{#if currentUser}}
+    <ul style = "list-style-type:square">
+      {{#each t in readArray}}
+        <li><h2>{{t.name}}</h2>
+          <div class="checkbox">
+            <label><input type="checkbox"> Bookmark</label>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{else}}
+      <p>You must log in to see your reading list</p>
+    {{/if}}
+  </div>
+
+</template>
