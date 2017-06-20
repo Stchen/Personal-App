@@ -33,7 +33,7 @@
       <tr>
         <td>{{t.storyname}}</td>
         <td>{{t.chapter}}</td>
-        <td align = "right"><button id = "edit" class = "btn btn-primary"> Edit </button></td>
+        <td align = "right"><button id = "edit" class = "btn btn-primary"> Edit </button>{{>removestory}}</td>
       </tr>
       {{/each}}
     </tbody>
@@ -43,7 +43,14 @@
 <template name = "addstory">
   Story Name: <input type="text" placeholder = "Story Name" id="storyname"> <br>
   Chapter: <input type = "text" placeholder = "Chapter #" id = "chapternumber"> <br>
+  Password: <input type="password" id="inputpassword" placeholder="Password"> <br>
   <button id="addstorybutton" class = "btn btn-primary">
     Add to Collection
-  </button><br>
+  </button>
+
+</template>
+
+<template name = "removestory">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+
 </template>
