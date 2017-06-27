@@ -2,3 +2,19 @@
   float: right;
   margin:20px;
 }
+
+.writelist{
+  padding: 25px;
+  margin: 20px;
+  width:auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.writertable{
+  width:100%;
+}
+
+.remove {
+  float: right;
+}

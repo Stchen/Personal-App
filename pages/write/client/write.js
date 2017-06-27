@@ -23,7 +23,7 @@ Template.removestory.helpers({
 })
 
 Template.removestory.events({
-  'click span'(elt,instance){
+  'click button'(elt,instance){
     console.dir(this);
     //this find the mongoid so we can delete something
     //this used to only show the word Object

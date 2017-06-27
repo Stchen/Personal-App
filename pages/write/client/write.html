@@ -1,16 +1,13 @@
 <template name="write">
 
-  <div class="jumbotron" style="background-color: #FFFFFF;">
+  <div class="writelist">
     <h1>Novels
       <button class = "newNovel"> <b>+</b> New Novel </button>
     </h1>
-    <form>
       <div class="input-group input-group-sm">
         <input type="text" class="form-control" placeholder="Search">
         <button class="btn btn-default" type="submit">Enter</button>
-
       </div>
-    </form>
     <hr>
     {{#if currentUser}}
       {{> showstory}}
@@ -23,7 +20,7 @@
 
 <template name = "showstory">
   {{> addstory}}
-  <table class = "table table-striped">
+  <table class = "writertable">
     <thead>
       <tr><th>Current stories</th><th>Chapter</th></tr>
     </thead>
@@ -32,7 +29,8 @@
       <tr>
         <td>{{t.storyname}}</td>
         <td>{{t.chapter}}</td>
-        <td align = "right"><button id = "edit" class = "btn btn-primary"> Edit </button>{{>removestory story=t}}</td>
+        <td align = "right"><button id = "edit" class = "btn btn-primary"> Edit </button></td>
+        <td> {{>removestory story=t}} </td>
       </tr>
       {{/each}}
     </tbody>
@@ -42,7 +40,6 @@
 <template name = "addstory">
   Story Name: <input type="text" placeholder = "Story Name" id="storyname"> <br>
   Chapter: <input type = "  text" placeholder = "Chapter #" id = "chapternumber"> <br>
-  Password: <input type="password" id="inputpassword" placeholder="Password"> <br>
   <button id="addstorybutton" class = "btn btn-primary">
     Add to Collection
   </button>
@@ -50,6 +47,6 @@
 </template>
 
 <template name = "removestory">
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  <button id = "remove" class = "btn btn-primary"> Remove </button>
 
 </template>
