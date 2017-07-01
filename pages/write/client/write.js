@@ -1,3 +1,7 @@
+Template.write.onCreated(function(){
+  Meteor.subscribe("story");
+})
+
 Template.showstory.helpers({
   storylist() {return Story.find()},
 })

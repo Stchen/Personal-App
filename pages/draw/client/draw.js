@@ -20,17 +20,26 @@ function clear(){
 	drawContext = drawSpace.getContext("2d");
 	drawContext.fillStyle = "yellow";
 	drawContext.fillRect(0,0,600,300);
+	drawContext.font="48px serif";
+	drawContext.strokeText("Life is good", 100,100);
 }
 
 
 function drawTriangle() {
 	drawContext = drawSpace.getContext("2d");
 	drawContext.strokeStyle="#ff0000"; // or green or "#fff"
-	drawContext.moveTo(100,100);
-	drawContext.lineTo(150,100);
-	drawContext.lineTo(125,150);
-	drawContext.lineTo(100,100);
-	drawContext.stroke();
+	drawContext.fillStyle= "blue";
+	//drawContext.moveTo(150,250);
+	//drawContext.lineTo(150,450);
+	//drawContext.lineTo(350,450);
+	//drawContext.lineTo(350,250);
+	//drawContext.lineTo(150,250);
+	//drawContext.stroke();
+
+	drawContext.fillRect(125, 125, 4, 40);
+	drawContext.fillRect(105, 140, 40, 4);
+
+	//drawContext.fillRect(50, 50, 200, 200);
 }
 
 
