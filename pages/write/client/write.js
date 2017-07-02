@@ -43,3 +43,19 @@ Template.removestory.events({
     */
   }
 })
+
+Template.editstory.events({
+  'click .changed'(elt, instance){
+    const changedname = instance.$('#newstoryname').val();
+    const changechapter = instance.$('#newchapternumber').val();
+    const changedchapter = parseInt(changechapter);
+    console.dir('name' + changedname);
+    console.dir(changedchapter);
+    console.log(this.story);
+    instance.$('#newstoryname').val("");
+    instance.$('#newchapternumber').val("");
+    var change = {changedname, changedchapter}
+    Meteor.call('change.update',change,this.story);
+  }
+
+})

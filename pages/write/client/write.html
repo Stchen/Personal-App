@@ -29,7 +29,7 @@
       <tr>
         <td>{{t.storyname}}</td>
         <td>{{t.chapter}}</td>
-        <td align = "right"><button id = "edit" class = "btn btn-primary"> Edit </button></td>
+        <td>{{>editstory story=t}}</td>
         <td> {{>removestory story=t}} </td>
       </tr>
       {{/each}}
@@ -46,7 +46,17 @@
 
 </template>
 
+<template name = "editstory">
+  <div class = "dropdown">
+    <button class = "edit"> Edit </button>
+    <div id = "myDropdown" class = "dropdown-content">
+      New Name : <input type="text"  id="newstoryname"> <br>
+      New Chapter:<input type = "text" id= "newchapternumber"> <br>
+      <button class = "changed"> Submit </button>
+    </div>
+  </div>
+</template>
+
 <template name = "removestory">
   <button id = "remove" class = "btn btn-primary"> Remove </button>
-
 </template>
