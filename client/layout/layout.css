@@ -3,6 +3,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 ul {
@@ -11,6 +12,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  background-size: cover;
 }
 
 li{
@@ -29,15 +31,11 @@ li a:hover {
   background-color: #111;
 }
 
-div.login {
-  background-color: white;
-  border: 25px;
-  width:auto;
-  text-align: center;
-  position:absolute;
-  top: 10px;
-  left: 1150px;
-  padding: 10px;
+.login{
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+
 }
 
 /* For mobile phones: */
