@@ -1,0 +1,27 @@
+<template name="library">
+
+  <div class = libShow>
+    <h1>Your Novels </h1>
+    <br>
+      <div class="input-group">
+      <!-- this is where the user inserts a new novel -->
+        <input type="text" class="novelName" placeholder="Novel Name" id=novelName>
+        <button class="newNovel">+New Novel</button>
+      </div>
+      <hr>
+      {{#if currentUser}}
+        {{>showNovel}}
+      {{else}}
+        <p>You must log in to edit your Novel list</p>
+      {{/if}}
+  </div>
+
+</template>
+
+<template name = "showNovel">
+  <!--shows all the current story -->
+  {{#each t in liblist}}
+    <div class ="well"><a href="/{{n.name}}"> {{t.novelName}} </a></div>
+    <button id="remove" class = "remove"> delete </button>
+  {{/each}}
+</template>

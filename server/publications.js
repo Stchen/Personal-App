@@ -5,3 +5,7 @@ Meteor.publish('written', function(){
 Meteor.publish('story', function(){
   return Story.find();
 })
+
+Meteor.publish('novel', function(){
+  return Novel.find();
+})

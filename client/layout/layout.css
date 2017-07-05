@@ -10,9 +10,6 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  background-size: cover;
 }
 
 li{
@@ -32,10 +29,9 @@ li a:hover {
 }
 
 .login{
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-
+  overflow:visible;
+  text-align: center;
+  margin:5px;
 }
 
 /* For mobile phones: */

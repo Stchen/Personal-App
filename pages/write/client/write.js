@@ -3,7 +3,7 @@ Template.write.onCreated(function(){
 })
 
 Template.showstory.helpers({
-  storylist() {return Story.find()},
+  storylist() {return Story.find({story:true}).fetch()},
 })
 
 Template.addstory.events({
@@ -15,7 +15,7 @@ Template.addstory.events({
     instance.$('#storyname').val("");
     instance.$('#chapternumber').val("");
     //this empties the text boxes after you enter something
-    var writen = {storyname:storyname, chapter:chapter,owner:Meteor.userId()};
+    var writen = {storyname:storyname, chapter:chapter,owner:Meteor.userId(),story:true};
     Meteor.call('writen.insert',writen);
     //Story.insert(write);
     console.dir(this);

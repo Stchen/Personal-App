@@ -1,13 +1,7 @@
 <template name="write">
 
   <div class="writelist">
-    <h1>Novels
-      <button class = "newNovel"> <b>+</b> New Novel </button>
-    </h1>
-      <div class="input-group input-group-sm">
-        <input type="text" class="form-control" placeholder="Search">
-        <button class="btn btn-default" type="submit">Enter</button>
-      </div>
+    <h1>Novels </h1>
     <hr>
     {{#if currentUser}}
       {{> showstory}}
@@ -19,6 +13,7 @@
 </template>
 
 <template name = "showstory">
+  <!--shows all the current story -->
   {{> addstory}}
   <table class = "writertable">
     <thead>
