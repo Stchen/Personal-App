@@ -1,12 +1,16 @@
-Template.write.onCreated(function(){
-  Meteor.subscribe("story");
+Template.library.onCreated(function(){
+  Meteor.subscribe("library");
 })
 
-Template.showstory.helpers({
+Template.library.helpers({
   liblist() {
-    return Story.find({novel:true}).fetch();
+    return Library.find()
   },
-  owner(){return (Meteor.userId()== this.story.owner)},
+})
+
+Template.showNovel.helpers({
+
+  owner(){return (Meteor.userId()== this.library.owner)},
 })
 
 Template.library.events({
@@ -15,18 +19,18 @@ Template.library.events({
     console.log('adding ' + novelName);
     instance.$('#novelName').val("");
     //this empties the text boxes after you enter something
-    var input = {novelName:novelName,novel:true,owner:Meteor.userId()};
-    Meteor.call('writen.insert',input);
+    var input = {novelName:novelName,owner:Meteor.userId()};
+    Meteor.call('library.insert',input);
     //inserts a new novel in the library
     console.dir(this);
   }
 })
 
-Template.showstory.events({
+Template.showNovel.events({
   'click .remove'(elt,instance){
-    if(Meteor.userId() == this.story.owner){
+    if(Meteor.userId() == this.library.owner){
       //only allows delete if person owns the novel
-      Meteor.call('writen.remove',this.story);
+      Meteor.call('library.remove',this.library);
     }
   }
 })

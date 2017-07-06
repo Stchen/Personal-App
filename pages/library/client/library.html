@@ -3,14 +3,17 @@
   <div class = libShow>
     <h1>Your Novels </h1>
     <br>
-      <div class="input-group">
+      <div class = "input-group">
       <!-- this is where the user inserts a new novel -->
         <input type="text" class="novelName" placeholder="Novel Name" id=novelName>
+
         <button class="newNovel">+New Novel</button>
       </div>
       <hr>
       {{#if currentUser}}
-        {{>showNovel}}
+      {{#each t in liblist}}
+        {{>showNovel library=t}}
+      {{/each}}
       {{else}}
         <p>You must log in to edit your Novel list</p>
       {{/if}}
@@ -19,9 +22,34 @@
 </template>
 
 <template name = "showNovel">
-  <!--shows all the current story -->
-  {{#each t in liblist}}
-    <div class ="well"><a href="/{{n.name}}"> {{t.novelName}} </a></div>
-    <button id="remove" class = "remove"> delete </button>
-  {{/each}}
+    <div class ="well"><a href="/{{n.name}}"> {{library.novelName}} </a><button id="remove" class = "remove"> delete </button></div>
 </template>
+
+<!-- this is for html
+<template name="master">
+  {{#if isLibrary}}
+    {{> library masterDict=masterDict}}
+  {{/if}}
+
+  {#if isWrite}}
+    {{> write masterDict=masterDict}}
+  {{/if}}
+</template>
+-->
+
+<!-- this is for javascript
+Template.master.onCreated(function(){
+  this.dict = new ReactiveDict();
+  this.dict.set("page", this.data)
+})
+
+helpers
+
+masterDict:function(){
+  return Template.instance().dict
+}
+
+isLibrary:function{
+return dict.get("page")
+}
+-->

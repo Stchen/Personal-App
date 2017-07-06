@@ -1,11 +1,19 @@
 Template.write.onCreated(function(){
   Meteor.subscribe("story");
+  console.log(this.data);
+  console.log(this.id)
 })
 
 Template.showstory.helpers({
   storylist() {return Story.find({story:true}).fetch()},
 })
 
+Template.showstory.events({
+  'click .add'(elt,instance){
+    Router.go('/writing');
+  }
+})
+/*
 Template.addstory.events({
   'click button'(elt,instance) {
     const storyname = instance.$('#storyname').val();
@@ -21,7 +29,7 @@ Template.addstory.events({
     console.dir(this);
   }
 })
-
+*/
 Template.removestory.helpers({
   owner() {return (Meteor.userId() == this.story.owner)}
 })

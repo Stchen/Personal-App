@@ -1,0 +1,11 @@
+<template name="master">
+  {{#if isLibrary}}
+    {{> library masterDict=masterDict}}
+  {{/if}}
+
+  {{#if isWrite}}
+    {{> write masterDict=masterDict}}
+  {{/if}}
+</template>
+
+<!-- -->

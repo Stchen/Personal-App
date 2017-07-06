@@ -1,0 +1,24 @@
+<template name = "writing">
+  <div class= "background">
+    Story Name: <input type="text" placeholder = "Story Name" id="storyname"> <br>
+    Chapter: <input type = "  text" placeholder = "Chapter #" id = "chapternumber"> <br>
+
+    Series: <input type = "  text" placeholder = "From which novel" id = "parent">
+    {{>pickNovel t=t}}
+
+    <br>
+    <hr>
+    <label class="control-label col-md-3 bold">Chapter Content</label>
+    <textarea class = "col-md-10" rows="10" cols="80" id="content"></textarea>
+    <br>
+    <button id="addstorybutton" class = "btn btn-primary">
+      Add to Collection
+    </button>
+  </div>
+</template>
+
+<template name = "pickNovel">
+  {{#each t in liblist}}
+    <label class="checkbox-inline"><input type="checkbox" value="">{{t.novelName}}</label>
+  {{/each}}
+</template>

@@ -14,16 +14,19 @@
 
 <template name = "showstory">
   <!--shows all the current story -->
-  {{> addstory}}
+  <button id="startstory" class = "add btn btn-primary">
+    Write New Chapter
+  </button>
   <table class = "writertable">
     <thead>
-      <tr><th>Current stories</th><th>Chapter</th></tr>
+      <tr><th>Written Stories</th><th>Chapter</th><th>Created on</th> <th></th><th></th> </tr>
     </thead>
     <tbody>
       {{#each t in storylist}}
       <tr>
         <td>{{t.storyname}}</td>
         <td>{{t.chapter}}</td>
+        <td>{{t.date}}</td>
         <td>{{>editstory story=t}}</td>
         <td> {{>removestory story=t}} </td>
       </tr>
@@ -31,15 +34,15 @@
     </tbody>
   </table>
 </template>
-
+<!--
 <template name = "addstory">
   Story Name: <input type="text" placeholder = "Story Name" id="storyname"> <br>
   Chapter: <input type = "  text" placeholder = "Chapter #" id = "chapternumber"> <br>
   <button id="addstorybutton" class = "btn btn-primary">
     Add to Collection
   </button>
-
 </template>
+-->
 
 <template name = "editstory">
   <div class = "dropdown">
